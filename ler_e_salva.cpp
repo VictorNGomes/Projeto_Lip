@@ -4,7 +4,7 @@
 
 const int SMAX = 50;
 const int MAX_P = 3;
-const int MAX = 600;
+const int MAX = 2000;
 using namespace std;
 
 struct RGB{
@@ -75,7 +75,7 @@ arq.open(nome_arquivo);
    int contG = 1;
    int contB;
 
-        for(int i = 0; i<img.Largura; i++){
+        for(int i = 0; i<(3*(img.Largura)); i++){
                 for(contB = 2; contB <img.Altura; contB+=3){
                 arq >> img.Cor.R[i][contR] >> img.Cor.G[i][contG] >> img.Cor.B[i][contB];
                 contR+=3;
@@ -115,7 +115,7 @@ arq.open(novo_arquivo);
    int contG = 1;
    int contB;
 
-        for(int i = 0; i<img.Largura; i++){
+        for(int i = 0; i<(3*(img.Largura)); i++){
                 for(contB = 2; contB <img.Altura; contB+=3){
                 arq << img.Cor.R[i][contR] << " " << img.Cor.G[i][contG]<< " " << img.Cor.B[i][contB] << " ";
                 contR+=3;
